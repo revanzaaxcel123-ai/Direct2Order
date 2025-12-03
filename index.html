@@ -1,207 +1,379 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8">
-<title>Layanan Aktif 24/7 — VanzShop.com</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Layanan Aktif 24/7 — VanzShop.com</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-/* ----- BASE THEME (exact homepage style) ----- */
-:root {
-  --bg:#050509;
-  --card:#111118;
-  --accent:#f7d46a;
-  --accent-strong:#ffdf7a;
-  --accent-soft:rgba(247,212,106,0.22);
-  --text:#f5f5f5;
-  --text-muted:#b3b3c2;
-  --border-soft:rgba(255,255,255,0.06);
-  --radius-card:32px;
-  --radius-btn:18px;
-  --shadow-soft:0 28px 80px rgba(0,0,0,0.85);
-}
-*,*::before,*::after{box-sizing:border-box;}
-body{
-  margin:0;
-  font-family:"Inter";
-  background:radial-gradient(circle at top,rgba(255,221,140,0.08),transparent 55%),
-             radial-gradient(circle at bottom,rgba(50,50,80,.9),#050509 70%);
-  color:var(--text);
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.shell{width:100%;max-width:440px;padding:32px 16px;}
-.card{
-  background:radial-gradient(circle at top,rgba(255,255,255,0.03),transparent 55%),var(--card);
-  border-radius:var(--radius-card);
-  padding:32px 24px;
-  border:1px solid var(--border-soft);
-  box-shadow:var(--shadow-soft);
-}
+  <style>
+    /* ============ THEME ============ */
+    :root {
+      --bg: #050509;
+      --card: #111118;
+      --accent: #f7d46a;
+      --accent-strong: #ffdf7a;
+      --accent-soft: rgba(247, 212, 106, 0.22);
+      --text: #f5f5f5;
+      --text-muted: #b3b3c2;
+      --border-soft: rgba(255, 255, 255, 0.06);
+      --radius-card: 32px;
+      --radius-btn: 18px;
+      --shadow-soft: 0 28px 80px rgba(0, 0, 0, 0.9);
+    }
 
-/* ----- LOGO GOLD ROUND ----- */
-.logo-wrapper {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 14px;
-}
-.logo-circle {
-  width: 90px;
-  height: 90px;
-  border-radius: 999px;
-  background: radial-gradient(circle at 30% 20%, #fff7c8 0%, #ffe083 35%, #d4a937 70%, #7f6518 100%);
-  border: 2px solid rgba(255, 220, 140, 0.55);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.8),
-              inset 0 6px 12px rgba(255,255,255,0.25),
-              inset 0 -6px 10px rgba(0,0,0,0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.logo-circle img {
-  width: 68%;
-  height: 68%;
-  object-fit: contain;
-}
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-/* ----- TITLE ----- */
-.title-wrap{text-align:center;margin-bottom:18px;}
-.title-wrap h1{margin:4px 0;font-size:1.42rem;color:var(--accent-strong);}
-.title-wrap p{margin:0;color:var(--text-muted);font-size:0.88rem;}
-.badge{
-  font-size:0.75rem;
-  padding:4px 9px;
-  display:inline-flex;
-  border-radius:999px;
-  background:var(--accent-soft);
-  color:var(--accent-strong);
-  margin-bottom:5px;
-}
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
 
-/* ----- BUTTONS ----- */
-.link-btn{
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  text-decoration:none;
-  padding:12px 16px;
-  border-radius:var(--radius-btn);
-  margin-top:10px;
-  background:#0f0f16;
-  color:#fff;
-  border:1px solid var(--border-soft);
-  transition:0.1s;
-}
-.link-btn-primary{
-  background:linear-gradient(135deg,#2b2412,#141419);
-  border-color:rgba(247,212,106,0.55);
-}
-.link-btn:hover{
-  transform:translateY(-1px);
-  border-color:rgba(247,212,106,0.7);
-}
-.btn-left{display:flex;gap:10px;align-items:center;}
-.btn-icon{
-  width:28px;height:28px;border-radius:999px;
-  display:flex;align-items:center;justify-content:center;
-  background:rgba(0,0,0,0.55);
-}
+    body {
+      min-height: 100vh;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
 
-/* ----- INFO BOX ----- */
-.order-box{
-  margin-top:20px;
-  padding:16px 16px;
-  border-radius:20px;
-  background:linear-gradient(145deg,#131320,#101018);
-  border:1px solid rgba(255,255,255,0.06);
-}
-.order-box h2{
-  font-size:1rem;
-  margin:0 0 8px;
-  color:#fceec4;
-}
-.order-box ul{margin:0;padding-left:18px;}
-.order-box li{color:var(--text-muted);margin-bottom:4px;font-size:.85rem;}
+    /* ============ GLOBAL BG (REUSABLE) ============ */
+    .page-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 15% 0%, rgba(40, 40, 90, 0.9), transparent 55%),
+        radial-gradient(circle at 50% 120%, rgba(8, 8, 20, 0.9), #050509 70%);
+    }
 
-/* ----- BACK ----- */
-.back-link{
-  margin-top:20px;
-  font-size:.82rem;
-  color:var(--text-muted);
-  text-decoration:none;
-  display:flex;
-  gap:6px;
-  align-items:center;
-}
-</style>
+    /* cahaya kuning dari kanan atas */
+    .page-bg::after {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      right: -120px;
+      top: -40px;
+      background: radial-gradient(circle at center, rgba(247, 212, 106, 0.45), transparent 60%);
+      filter: blur(6px);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+    }
+
+    /* gelembung bulat animasi */
+    .orb {
+      position: absolute;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.06), transparent 65%);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+      opacity: 0.55;
+      filter: blur(1px);
+      animation: floatOrb 36s ease-in-out infinite alternate;
+    }
+
+    .orb-1 {
+      width: 180px;
+      height: 180px;
+      left: 8%;
+      top: 55%;
+      animation-delay: -6s;
+    }
+
+    .orb-2 {
+      width: 260px;
+      height: 260px;
+      right: 5%;
+      bottom: -40px;
+      animation-delay: -14s;
+    }
+
+    .orb-3 {
+      width: 140px;
+      height: 140px;
+      right: 25%;
+      top: 18%;
+      animation-delay: -22s;
+    }
+
+    @keyframes floatOrb {
+      0% {
+        transform: translate3d(0, 0, 0);
+        opacity: 0.45;
+      }
+      50% {
+        transform: translate3d(18px, -24px, 0);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translate3d(-12px, -6px, 0);
+        opacity: 0.5;
+      }
+    }
+
+    /* ============ LAYOUT CARD ============ */
+    .shell {
+      width: 100%;
+      max-width: 480px;
+      padding: 32px 16px;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+    }
+
+    .card {
+      width: 100%;
+      background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.03), transparent 55%),
+        var(--card);
+      border-radius: var(--radius-card);
+      padding: 30px 24px 28px;
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* ============ LOGO BULAT ============ */
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .logo-circle {
+      width: 92px;
+      height: 92px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #fff7c8 0%, #ffe083 35%, #d4a937 70%, #7f6518 100%);
+      border: 2px solid rgba(255, 220, 140, 0.6);
+      box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.85),
+        inset 0 6px 10px rgba(255, 255, 255, 0.25),
+        inset 0 -6px 10px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo-circle img {
+      width: 70%;
+      height: 70%;
+      object-fit: contain;
+    }
+
+    /* ============ TITLE / BADGE ============ */
+    .title-wrap {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 0.78rem;
+      margin-bottom: 6px;
+    }
+
+    .title-wrap h1 {
+      margin: 4px 0 4px;
+      font-size: 1.45rem;
+      color: var(--accent-strong);
+    }
+
+    .title-wrap p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    /* ============ BUTTONS ============ */
+    .link-btn {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: var(--radius-btn);
+      margin-top: 10px;
+      background: #101018;
+      color: #ffffff;
+      border: 1px solid var(--border-soft);
+      transition:
+        transform 0.1s ease-out,
+        box-shadow 0.12s ease-out,
+        border-color 0.12s ease-out,
+        background 0.12s ease-out;
+    }
+
+    .link-btn-primary {
+      background: linear-gradient(135deg, #2b2412, #141419);
+      border-color: rgba(247, 212, 106, 0.6);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
+    }
+
+    .link-btn:hover {
+      transform: translateY(-1px);
+      border-color: rgba(247, 212, 106, 0.75);
+      box-shadow: 0 16px 38px rgba(0, 0, 0, 0.9);
+      background: linear-gradient(135deg, #181821, #1d1d25);
+    }
+
+    .link-btn-primary:hover {
+      background: linear-gradient(135deg, #3c3217, #171722);
+    }
+
+    .btn-left {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.55);
+      font-size: 1.1rem;
+    }
+
+    .btn-text {
+      font-size: 0.96rem;
+      font-weight: 500;
+    }
+
+    .btn-arrow {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    /* ============ INFO BOXES ============ */
+    .order-box {
+      margin-top: 20px;
+      padding: 16px 16px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #141428, #101018);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .order-box h2 {
+      font-size: 1rem;
+      margin: 0 0 8px;
+      color: #fceec4;
+    }
+
+    .order-box ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .order-box li {
+      color: var(--text-muted);
+      margin-bottom: 4px;
+      font-size: 0.85rem;
+    }
+
+    /* ============ BACK LINK ============ */
+    .back-link {
+      margin-top: 20px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+  </style>
 </head>
 
 <body>
-<main class="shell">
-<section class="card">
-
-  <!-- LOGO -->
-  <div class="logo-wrapper">
-    <div class="logo-circle">
-      <img src="logo.png" alt="VanzShop Logo">
-    </div>
+  <!-- BACKGROUND (reusable untuk page lain juga) -->
+  <div class="page-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
   </div>
 
-  <!-- TITLE -->
-  <div class="title-wrap">
-    <div class="badge">⚡ Layanan aktif 24/7</div>
-    <h1>VanzShop.com</h1>
-    <p>Pilih metode order paling cepat & nyaman.</p>
-  </div>
+  <main class="shell">
+    <section class="card">
 
-  <!-- BUTTON 1 -->
-  <a class="link-btn link-btn-primary" href="https://t.me/VanzShopBot" target="_blank">
-    <span class="btn-left">
-      <span class="btn-icon">🤖</span>
-      Order via Bot Telegram (24/7)
-    </span>
-    ↗
-  </a>
+      <!-- LOGO -->
+      <div class="logo-wrapper">
+        <!-- pastikan file: logo.png -->
+        <div class="logo-circle">
+          <img src="logo.png" alt="VanzShop Logo">
+        </div>
+      </div>
 
-  <!-- BUTTON 2 -->
-  <a class="link-btn" href="https://web.xoftware.id/vanzstoreid" target="_blank">
-    <span class="btn-left">
-      <span class="btn-icon">🌐</span>
-      Order via Webstore (24/7)
-    </span>
-    ↗
-  </a>
+      <!-- TITLE -->
+      <div class="title-wrap">
+        <div class="badge">⚡ Layanan aktif 24/7</div>
+        <h1>VanzShop.com</h1>
+        <p>Pilih metode order paling cepat & nyaman.</p>
+      </div>
 
-  <!-- BOXES -->
-  <div class="order-box">
-    <h2>🤖 Order via Bot Telegram</h2>
-    <ul>
-      <li>Klik tombol di atas</li>
-      <li>Pilih produk & jumlah</li>
-      <li>Bayar sesuai instruksi</li>
-      <li>Produk dikirim otomatis</li>
-    </ul>
-  </div>
+      <!-- BUTTON: BOT TELEGRAM -->
+      <a class="link-btn link-btn-primary" href="https://t.me/VanzShopBot" target="_blank" rel="noopener">
+        <span class="btn-left">
+          <span class="btn-icon">🤖</span>
+          <span class="btn-text">Order via Bot Telegram (24/7)</span>
+        </span>
+        <span class="btn-arrow">↗</span>
+      </a>
 
-  <div class="order-box">
-    <h2>🌐 Order via Webstore</h2>
-    <ul>
-      <li>Masuk Webstore</li>
-      <li>Pilih produk → keranjang</li>
-      <li>Lakukan pembayaran</li>
-      <li>Produk langsung aktif</li>
-    </ul>
-  </div>
+      <!-- BUTTON: WEBSTORE -->
+      <a class="link-btn" href="https://web.xoftware.id/vanzstoreid" target="_blank" rel="noopener">
+        <span class="btn-left">
+          <span class="btn-icon">🌐</span>
+          <span class="btn-text">Order via Webstore (24/7)</span>
+        </span>
+        <span class="btn-arrow">↗</span>
+      </a>
 
-  <!-- BACK -->
-  <a class="back-link" href="https://vanz-shop-com.vercel.app">← Kembali</a>
+      <!-- BOX 1 -->
+      <div class="order-box">
+        <h2>🤖 Order via Bot Telegram</h2>
+        <ul>
+          <li>Klik tombol di atas.</li>
+          <li>Pilih produk & jumlah.</li>
+          <li>Bayar sesuai instruksi.</li>
+          <li>Produk dikirim otomatis.</li>
+        </ul>
+      </div>
 
-</section>
-</main>
+      <!-- BOX 2 -->
+      <div class="order-box">
+        <h2>🌐 Order via Webstore</h2>
+        <ul>
+          <li>Masuk Webstore.</li>
+          <li>Pilih produk → keranjang.</li>
+          <li>Lakukan pembayaran.</li>
+          <li>Produk langsung aktif.</li>
+        </ul>
+      </div>
+
+      <!-- BACK -->
+      <a class="back-link" href="https://vanz-shop-com.vercel.app">
+        <span>←</span>
+        <span>Kembali ke Menu Utama</span>
+      </a>
+
+    </section>
+  </main>
 </body>
 </html>
