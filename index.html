@@ -1,204 +1,207 @@
 <!doctype html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <title>Layanan Aktif 24/7 — VanzShop.com</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>Layanan Aktif 24/7 — VanzShop.com</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ----- BASE THEME (exact homepage style) ----- */
+:root {
+  --bg:#050509;
+  --card:#111118;
+  --accent:#f7d46a;
+  --accent-strong:#ffdf7a;
+  --accent-soft:rgba(247,212,106,0.22);
+  --text:#f5f5f5;
+  --text-muted:#b3b3c2;
+  --border-soft:rgba(255,255,255,0.06);
+  --radius-card:32px;
+  --radius-btn:18px;
+  --shadow-soft:0 28px 80px rgba(0,0,0,0.85);
+}
+*,*::before,*::after{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:"Inter";
+  background:radial-gradient(circle at top,rgba(255,221,140,0.08),transparent 55%),
+             radial-gradient(circle at bottom,rgba(50,50,80,.9),#050509 70%);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.shell{width:100%;max-width:440px;padding:32px 16px;}
+.card{
+  background:radial-gradient(circle at top,rgba(255,255,255,0.03),transparent 55%),var(--card);
+  border-radius:var(--radius-card);
+  padding:32px 24px;
+  border:1px solid var(--border-soft);
+  box-shadow:var(--shadow-soft);
+}
 
-  <style>
-    :root {
-      --bg:#050509;
-      --bg-soft:#0b0b12;
-      --card:#111118;
-      --accent:#f7d46a;
-      --accent-soft:rgba(247,212,106,0.2);
-      --accent-strong:#ffdf7a;
-      --text:#f5f5f5;
-      --text-muted:#b3b3c2;
-      --border-soft:rgba(255,255,255,0.04);
-      --shadow-soft:0 28px 80px rgba(0,0,0,0.85);
-      --radius-card:32px;
-      --radius-btn:18px;
-    }
-    *,*::before,*::after{box-sizing:border-box;}
-    html,body{margin:0;padding:0;}
-    body{
-      min-height:100vh;
-      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      background:radial-gradient(circle at top,rgba(247,212,106,0.08),transparent 55%),
-                 radial-gradient(circle at bottom,rgba(56,56,80,0.9),#050509 70%);
-      color:var(--text);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    }
-    .shell{
-      width:100%;
-      max-width:440px;
-      padding:32px 16px;
-    }
-    .card{
-      background:radial-gradient(circle at top,rgba(255,255,255,0.03),transparent 55%),var(--card);
-      border-radius:var(--radius-card);
-      box-shadow:var(--shadow-soft);
-      padding:30px 22px 26px;
-      border:1px solid rgba(255,255,255,0.04);
-    }
-    .title-wrap{
-      text-align:center;
-      margin-bottom:22px;
-    }
-    .badge{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      padding:4px 9px;
-      border-radius:999px;
-      background:var(--accent-soft);
-      color:var(--accent-strong);
-      font-size:0.76rem;
-      margin-bottom:6px;
-    }
-    .title-wrap h1{
-      margin:0 0 6px;
-      font-size:1.45rem;
-      color:var(--accent-strong);
-    }
-    .title-wrap p{
-      margin:0;
-      font-size:0.88rem;
-      color:var(--text-muted);
-    }
+/* ----- LOGO GOLD ROUND ----- */
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.logo-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 20%, #fff7c8 0%, #ffe083 35%, #d4a937 70%, #7f6518 100%);
+  border: 2px solid rgba(255, 220, 140, 0.55);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8),
+              inset 0 6px 12px rgba(255,255,255,0.25),
+              inset 0 -6px 10px rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.logo-circle img {
+  width: 68%;
+  height: 68%;
+  object-fit: contain;
+}
 
-    .link-btn{
-      border:none;
-      outline:none;
-      width:100%;
-      text-decoration:none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:var(--radius-btn);
-      cursor:pointer;
-      background:rgba(13,13,22,0.94);
-      border:1px solid var(--border-soft);
-      color:var(--text);
-      transition:transform .1s ease-out,box-shadow .1s ease-out,border-color .12s ease-out,background .12s ease-out;
-      margin-top:10px;
-    }
-    .link-btn-primary{
-      background:linear-gradient(135deg,#2b2412,#141419);
-      border-color:rgba(247,212,106,0.45);
-      box-shadow:0 12px 30px rgba(0,0,0,0.85);
-    }
-    .link-btn:hover{
-      transform:translateY(-1px);
-      box-shadow:0 14px 35px rgba(0,0,0,0.85);
-      border-color:rgba(247,212,106,0.6);
-      background:linear-gradient(135deg,#181821,#1d1d25);
-    }
-    .link-btn-primary:hover{
-      background:linear-gradient(135deg,#3c3217,#171722);
-    }
-    .btn-left{display:inline-flex;align-items:center;gap:10px;}
-    .btn-right{display:inline-flex;align-items:center;gap:8px;}
-    .btn-icon{
-      width:28px;height:28px;border-radius:999px;
-      background:rgba(0,0,0,0.55);
-      display:inline-flex;align-items:center;justify-content:center;
-      font-size:1.1rem;
-    }
-    .btn-text{font-size:.96rem;font-weight:500;}
-    .btn-arrow{font-size:1rem;opacity:.9;}
+/* ----- TITLE ----- */
+.title-wrap{text-align:center;margin-bottom:18px;}
+.title-wrap h1{margin:4px 0;font-size:1.42rem;color:var(--accent-strong);}
+.title-wrap p{margin:0;color:var(--text-muted);font-size:0.88rem;}
+.badge{
+  font-size:0.75rem;
+  padding:4px 9px;
+  display:inline-flex;
+  border-radius:999px;
+  background:var(--accent-soft);
+  color:var(--accent-strong);
+  margin-bottom:5px;
+}
 
-    .order-box{
-      margin-top:20px;
-      padding:14px 14px 15px;
-      border-radius:20px;
-      background:linear-gradient(145deg,#131320,#101018);
-      border:1px solid rgba(255,255,255,0.06);
-    }
-    .order-box h2{
-      margin:0 0 6px;
-      font-size:.98rem;
-      color:#fdf4c3;
-    }
-    .order-box ul{
-      margin:0;padding-left:16px;
-    }
-    .order-box li{
-      font-size:.84rem;
-      color:var(--text-muted);
-      margin-bottom:4px;
-    }
+/* ----- BUTTONS ----- */
+.link-btn{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  text-decoration:none;
+  padding:12px 16px;
+  border-radius:var(--radius-btn);
+  margin-top:10px;
+  background:#0f0f16;
+  color:#fff;
+  border:1px solid var(--border-soft);
+  transition:0.1s;
+}
+.link-btn-primary{
+  background:linear-gradient(135deg,#2b2412,#141419);
+  border-color:rgba(247,212,106,0.55);
+}
+.link-btn:hover{
+  transform:translateY(-1px);
+  border-color:rgba(247,212,106,0.7);
+}
+.btn-left{display:flex;gap:10px;align-items:center;}
+.btn-icon{
+  width:28px;height:28px;border-radius:999px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,0.55);
+}
 
-    .back-link{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-      margin-top:20px;
-      font-size:.82rem;
-      color:var(--text-muted);
-      text-decoration:none;
-    }
-  </style>
+/* ----- INFO BOX ----- */
+.order-box{
+  margin-top:20px;
+  padding:16px 16px;
+  border-radius:20px;
+  background:linear-gradient(145deg,#131320,#101018);
+  border:1px solid rgba(255,255,255,0.06);
+}
+.order-box h2{
+  font-size:1rem;
+  margin:0 0 8px;
+  color:#fceec4;
+}
+.order-box ul{margin:0;padding-left:18px;}
+.order-box li{color:var(--text-muted);margin-bottom:4px;font-size:.85rem;}
+
+/* ----- BACK ----- */
+.back-link{
+  margin-top:20px;
+  font-size:.82rem;
+  color:var(--text-muted);
+  text-decoration:none;
+  display:flex;
+  gap:6px;
+  align-items:center;
+}
+</style>
 </head>
 
 <body>
-  <main class="shell">
-    <section class="card">
-      <div class="title-wrap">
-        <div class="badge">⚡ Layanan aktif 24/7</div>
-        <h1>Layanan aktif 24/7 ✨</h1>
-        <p>Pilih metode order yang paling nyaman buat kamu.</p>
-      </div>
+<main class="shell">
+<section class="card">
 
-      <a class="link-btn link-btn-primary" href="https://t.me/VanzShopBot" target="_blank" rel="noopener">
-        <span class="btn-left">
-          <span class="btn-icon">🤖</span>
-          <span class="btn-text">Order via Bot Telegram (24/7)</span>
-        </span>
-        <span class="btn-right"><span class="btn-arrow">↗</span></span>
-      </a>
+  <!-- LOGO -->
+  <div class="logo-wrapper">
+    <div class="logo-circle">
+      <img src="logo.png" alt="VanzShop Logo">
+    </div>
+  </div>
 
-      <a class="link-btn" href="https://web.xoftware.id/vanzstoreid" target="_blank" rel="noopener">
-        <span class="btn-left">
-          <span class="btn-icon">🌐</span>
-          <span class="btn-text">Order via Webstore (24/7)</span>
-        </span>
-        <span class="btn-right"><span class="btn-arrow">↗</span></span>
-      </a>
+  <!-- TITLE -->
+  <div class="title-wrap">
+    <div class="badge">⚡ Layanan aktif 24/7</div>
+    <h1>VanzShop.com</h1>
+    <p>Pilih metode order paling cepat & nyaman.</p>
+  </div>
 
-      <div class="order-box">
-        <h2>🤖 Order via Bot Telegram</h2>
-        <ul>
-          <li>Klik tombol <strong>Order via Bot</strong> di atas.</li>
-          <li>Pilih produk & jumlah yang diinginkan.</li>
-          <li>Lakukan pembayaran sesuai instruksi.</li>
-          <li>Produk akan dikirim otomatis oleh sistem.</li>
-        </ul>
-      </div>
+  <!-- BUTTON 1 -->
+  <a class="link-btn link-btn-primary" href="https://t.me/VanzShopBot" target="_blank">
+    <span class="btn-left">
+      <span class="btn-icon">🤖</span>
+      Order via Bot Telegram (24/7)
+    </span>
+    ↗
+  </a>
 
-      <div class="order-box">
-        <h2>🌐 Order via Webstore</h2>
-        <ul>
-          <li>Klik tombol <strong>Order via Webstore</strong> di atas.</li>
-          <li>Pilih produk dan tambahkan ke keranjang.</li>
-          <li>Bayar sesuai petunjuk di halaman checkout.</li>
-          <li>Produk siap digunakan setelah pembayaran terverifikasi.</li>
-        </ul>
-      </div>
+  <!-- BUTTON 2 -->
+  <a class="link-btn" href="https://web.xoftware.id/vanzstoreid" target="_blank">
+    <span class="btn-left">
+      <span class="btn-icon">🌐</span>
+      Order via Webstore (24/7)
+    </span>
+    ↗
+  </a>
 
-      <a href="https://vanz-shop-com.vercel.app" class="back-link">
-        <span>←</span>
-        <span>Kembali ke Menu Utama</span>
-      </a>
-    </section>
-  </main>
+  <!-- BOXES -->
+  <div class="order-box">
+    <h2>🤖 Order via Bot Telegram</h2>
+    <ul>
+      <li>Klik tombol di atas</li>
+      <li>Pilih produk & jumlah</li>
+      <li>Bayar sesuai instruksi</li>
+      <li>Produk dikirim otomatis</li>
+    </ul>
+  </div>
+
+  <div class="order-box">
+    <h2>🌐 Order via Webstore</h2>
+    <ul>
+      <li>Masuk Webstore</li>
+      <li>Pilih produk → keranjang</li>
+      <li>Lakukan pembayaran</li>
+      <li>Produk langsung aktif</li>
+    </ul>
+  </div>
+
+  <!-- BACK -->
+  <a class="back-link" href="https://vanz-shop-com.vercel.app">← Kembali</a>
+
+</section>
+</main>
 </body>
 </html>
